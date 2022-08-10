@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <main>
+    <div class="gradient"></div>
+    <!-- Incomplete State -->
+    <div class="form">
+      <form class="credential">
+        <div class="credential__input">
+          <label for="holder">CARDHOLDER NAME</label>
+          <input type="text" placeholder="e.g Jane Appleseed" id="holderName">
+          <span class="name__error"></span>
+        </div>
+        <div class="credential__input">
+          <label for="holder">CARD NUMBER</label>
+          <input type="text" placeholder="e.g 1234 5678 9123 0000" id="holderNumber">
+          <span class="number__error"></span>
+        </div>
+        <div class="credential__input credential--nums">
+          <div class="nums">
+            <label for="holder">EXP. DATE (MM/YY)</label>
+            <div class="nums__input">
+              <input type="number" placeholder="MM" id="holderMonth">
+              <input type="number" placeholder="YY" id="holderYear">
+            </div>
+            <span class="my__error"></span>
+          </div>
+          <div class="nums">
+            <label for="holder">CVC</label>
+            <input type="text" placeholder="e.g 123" class="holderCVC">
+            <span class="cvc__error"></span>
+          </div>
+        </div>
+        <button class="confirm">Confirm</button>
+      </form>
+    </div>
+    <!-- Incomplete State -->
+    <!-- Complete State -->
+    <div class="complete">
+      <img class="complete__check" src="./images/icon-complete.svg" alt="check">
+      <h1 class="complete__thanks">THANK YOU!</h1> 
+      <p class="complete__detail">We've added your card details</p>
+      <button class="complete__button">Continue</button>
+    </div>
+    <!-- Complete State -->
+    <!-- Card images here -->
+    <div class="front">
+      <div class="front__box">
+        <img class="front__card" src="./images/bg-card-front.png" alt="front card">
+        <div class="front__content">
+          <h2 class="card__number">0000 0000 0000 0000</h2>
+          <div class="card__info">
+            <h3 class="card__name">JANE APPLESEED</h3>
+            <span class="card__cv">00/00</span> 
+          </div>
+        </div>
+        <div class="circles">
+          <div class="circle__one"></div>
+          <div class="circle__two"></div>
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <img class="back__card" src="./images/bg-card-back.png" alt="back card">
+      <span class="back__number">000</span>
+    </div>
+  </main>
+  <script src="./js/index.js"></script>
+</body>
+</html>

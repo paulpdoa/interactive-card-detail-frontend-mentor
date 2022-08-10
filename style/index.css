@@ -1,0 +1,267 @@
+:root {
+    /* Primary */
+    --gradient: linear-gradient(to right, hsl(249,99%,64%), hsl(278,94%,30%));
+    --errors: hsl(0,100%,66%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --font: 'Space Grotesk', sans-serif;
+}
+/* remove up and down button on number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body {
+    font-family: var(--font);
+    font-size: 18px;
+    user-select:none;
+}
+main {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    height: 100vh;
+}
+.gradient {
+    background: url('../images/bg-main-desktop.png');
+    background-repeat:no-repeat;
+    grid-column: span 1;
+    background-size: cover;
+    position:relative;
+}
+.form {
+    grid-column: span 3;
+    display:flex;
+    align-items:center;
+    justify-content:center; 
+}  
+.credential {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:1em;
+    width: 30%;
+}
+.credential__input {
+    display:flex;
+    width: 100%;
+    flex-direction:column;
+}
+.credential__input label {
+    color: var(--very-dark-violet);
+    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.8em;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.credential__input input {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--light-grayish-violet);
+    outline:none;
+    padding: 1em;
+    font-family: var(--font);
+}
+.credential__input input::placeholder {
+    font-weight: 600;
+    font-family: var(--font);
+    color: var(--light-grayish-violet);
+}
+.credential--nums {
+    display:flex !important;
+    flex-direction: row;
+    align-items:center;
+    gap:1em;
+}
+.nums {
+    width: 100%;
+}
+.nums__input {
+    display:flex; 
+    gap:0.7em;
+}
+.confirm {
+    width: 100%;
+    padding: 1em;
+    border-radius: 4px;
+    border:none;
+    background: var(--very-dark-violet);
+    color: var(--light-grayish-violet);
+    font-weight: 500;
+    font-family: var(--font);
+    font-size: 0.8em;
+    cursor:pointer;
+}
+.front {
+    position:absolute;
+    top: 20%;
+    left: 5%;
+}
+.front__card {
+    width: 90%;
+}
+.front__box {
+    position:relative;
+}
+.circles {
+    display:flex;
+    gap:0.9em;
+    align-items:center;
+    position:absolute;
+    top: 1.5em;
+    left: 1em;
+}
+.circle__one {
+    border-radius: 100px;
+    width: 2em;
+    height: 2em;
+    background:var(--white);
+}
+.circle__two {
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--white);
+    border-radius: 100px;
+}
+.front__content {
+    position: absolute; 
+    bottom: 2em;
+    left: 1em;
+    color: var(--white);
+}
+.back {
+    position:absolute;
+    top: 55%;
+    left: 10%;
+}
+.back__card {
+    width: 90%;
+}
+.card__number {
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+}
+.card__info {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size: 0.6em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    margin-top: 2em;
+}
+.card__name,.card__cv {
+    font-weight: 400;
+}
+.card__cv {
+    margin-left: 1em;
+}
+.back__number {
+    position: absolute;
+    right:5.6em;
+    letter-spacing: 0.1em;
+    top:6em;
+    font-weight: 500;
+    color:var(--light-grayish-violet);
+    font-size: 0.9em;
+}
+
+/* Errors */
+.number__error,.name__error,.my__error,.cvc__error {
+    color:var(--errors);
+    font-size: 0.8em;
+    margin-top:0.3em;
+}
+/* For complete state */
+.complete {
+    display:none;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    grid-column:span 3;
+    gap:1em;
+}
+.complete__check {
+    width: 5em;
+}
+.complete__thanks {
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    font-size:1.6em;
+    color:var(--very-dark-violet);
+    margin-top: 1em;
+}
+.complete__detail {
+    color:var(--dark-grayish-violet);
+    font-weight: 700;
+}
+.complete__button {
+    background:var(--very-dark-violet);
+    color:var(--light-grayish-violet);
+    font-weight:500;
+    font-size: 1em;
+    font-family:var(--font);
+    padding:0.5em;
+    border-radius: 5px;
+    width: 30%;
+    margin-top: 1em;
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        display:flex;
+        flex-direction: column;
+    }
+    .gradient { 
+        width: 100%;
+        height: 50%;
+    }
+    .form {
+       height: 100%;
+       margin: 1em;
+    }
+    .credential {
+        width: 100%;
+        margin: 4em 1em 0 1em;
+    }
+    .front {
+        top:15%;
+        width: 70%;
+        z-index: 10;
+    }
+    .card__number {
+        font-size: 0.9em;
+    }
+    .front__card {
+        width: 100%;
+    }
+    .back {
+        width: 70%;
+        top: 1em;
+        left: 25%;
+    }
+    .back__card {
+        width: 100%;
+    }
+    .back__number {
+        display:none;
+    }
+    .complete {
+        height: 100%;
+        margin-top: 3.5em;
+    }
+}
